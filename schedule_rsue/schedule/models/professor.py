@@ -25,5 +25,8 @@ class Professor(models.Model):
         default=1,
     )
 
+    def __str__(self):
+        return f'{self.position} {self.last_name} {self.first_name[:1]}.{self.patronym[:1]}.'
+
     class Meta:
         app_label = 'api'

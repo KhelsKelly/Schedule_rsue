@@ -8,5 +8,8 @@ class LessonName(models.Model):
         max_length=60,
     )
 
+    def __str__(self):
+        return self.name
+
     class Meta:
         app_label = 'api'

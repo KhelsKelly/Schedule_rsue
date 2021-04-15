@@ -13,5 +13,8 @@ class Auditory(models.Model):
         related_name='auditories',
     )
 
+    def __str__(self):
+        return self.audit_num
+
     class Meta:
         app_label = 'api'

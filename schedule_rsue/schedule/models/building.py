@@ -14,5 +14,8 @@ class Building(models.Model):
         default='Большая Садовая ул. 69',
     )
 
+    def __str__(self):
+        return f'{self.corpus}, {self.address}'
+
     class Meta:
         app_label = 'api'

@@ -51,5 +51,9 @@ class Lesson(models.Model):
         choices=DAYS,
     )
 
+    def __str__(self):
+        return f'{self.name}, {self.day}'
+
     class Meta:
         app_label = 'api'
+        ordering = ['day', 'timetable']

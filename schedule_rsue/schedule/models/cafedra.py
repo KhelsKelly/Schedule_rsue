@@ -3,7 +3,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Cafedra(models.Model):
-    cafedra_name = models.CharField(
+    name = models.CharField(
         _('название кафедры'),
         max_length=80,
     )
@@ -12,6 +12,9 @@ class Cafedra(models.Model):
         on_delete=models.CASCADE,
         related_name='cafedras',
     )
+
+    def __str__(self):
+        return self.name
 
     class Meta:
         app_label = 'api'

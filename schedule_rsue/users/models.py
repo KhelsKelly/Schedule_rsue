@@ -1,11 +1,9 @@
-from django.conf import settings
+from django.contrib.auth import get_user_model
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 
 from .managers import CustomUserManager
-
-User = settings.AUTH_USER_MODEL
 
 
 class CustomUser(AbstractBaseUser, PermissionsMixin):
@@ -33,3 +31,7 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     class Meta:
         verbose_name = _('пользователь')
         verbose_name_plural = _('пользователи')
+        app_label = 'users'
+
+
+User = get_user_model()
